@@ -53,4 +53,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  ENV['VAPID_PUBLIC_KEY'] = "BBbY-kB3SJkGRUTruJDZxiYhhtk6SgXb5nD1nVQG29i08pb9yeX1qPJg1vaUx_HGfsnXI8bs2RpkZ6_xYqKUX6w="
 end

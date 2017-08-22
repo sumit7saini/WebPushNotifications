@@ -13,3 +13,24 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require serviceworker-companion
+//= require jquery
+//= require jquery_ujs
+// Register the serviceWorker script at /serviceworker.js from our server if supported
+if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/serviceworker.js')
+        .then(function(reg) {
+            console.log('Service worker change, registered the service worker');
+        });
+}
+// Otherwise, no push notifications :(
+else {
+    console.error('Service worker is not supported in this browser');
+}
+
+if(typeof jQuery!=='undefined'){
+    console.log('jQuery Loaded');
+}
+else{
+    console.log('not loaded yet');
+}

@@ -6,12 +6,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
+  <link rel="manifest" href="/manifest.json" />
+<meta name="apple-mobile-web-app-capable" content="yes"></head>
   <body>
 
 
 
   <%= yield %>
   </body>
+  <script>
+      window.vapidPublicKey = new Uint8Array(<%= get_publicKey %>);
+  </script>
 </html>
