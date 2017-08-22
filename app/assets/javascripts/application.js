@@ -28,6 +28,16 @@ else {
     console.error('Service worker is not supported in this browser');
 }
 
+// When serviceWorker is supported, installed, and activated,
+// subscribe the pushManager property with the vapidPublicKey
+navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
+    serviceWorkerRegistration.pushManager
+    .subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: window.vapidPublicKey
+    });
+});
+
 if(typeof jQuery!=='undefined'){
     console.log('jQuery Loaded');
 }
